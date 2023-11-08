@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="content">
+
+        <h2>
+            <font color="#800080">Cadastro de Cargos</font>
+        </h2>
+
+        <form method="POST" action="{{ url_for('cargos') }}">
+
+            <label for="nome">Nome do Cargo:</label>
+            <input type="text" name="nome" id="nome" required><hr>
+            <label for="id_setor">ID do Setor:</label>
+            <input type="text" name="id_setor" id="id_setor" required><hr>
+            
+            <button type="submit">Cadastrar</button>
+
+        </form>
+        
+    </div>
+{% endblock %}

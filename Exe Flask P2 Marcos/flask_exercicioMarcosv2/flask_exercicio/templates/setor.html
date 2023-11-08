@@ -1,0 +1,51 @@
+{% block body %}
+
+<div>
+	<table>
+		<tr>
+			<th colspan="5">Setor</th>
+		</tr>
+
+		<tr>
+			<form
+				method="post"
+				action="{{ url_for('insert_setor') }}">
+				<td>Outro Setor:</td>
+				<td>
+					<input
+						type="text"
+						name="nome"
+						required />
+				</td>
+
+				<td>
+					<button type="submit">Adicionar</button>
+				</td>
+
+			</form>
+
+		</tr>
+
+		<tr>
+			<td colspan="5"></td>
+		</tr>
+		<tr>
+			<td>ID</td>
+			<td>Setor atual</td>
+		</tr>
+		{% for row in setor %}
+		<tr>
+			<td>{{row.id}}</td>
+			<td>{{row.name}}</td>
+			<td>
+				<a
+					href="/delete_setor/{{row.id}}"
+					onclick="return confirm('Certeza?')">
+					<button>Remover</button></a
+				>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock %}

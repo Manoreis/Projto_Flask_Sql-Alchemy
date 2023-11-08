@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+    <h2>
+        <font color="#800080">Cadastros de Funcionários</font>
+    </h2>
+
+    <form method="POST" action="{{ url_for('funcionarios') }}">
+
+        <input type="text" name="nome" placeholder="Nome"><hr>
+        <input type="text" name="sobrenome" placeholder="Sobrenome"><hr>
+        <input type="date" name="data_admissao" placeholder="Data de Admissão"><hr>
+        <input type="checkbox" name="status_funcionario" value="1"> Ativo
+        <input type="text" name="id_setor" placeholder="ID do Setor"><hr>
+        <input type="text" name="id_cargo" placeholder="ID do Cargo"><hr>
+
+        <button type="submit">
+            Cadastrar
+        </button>
+
+    </form>
+
+{% endblock %}

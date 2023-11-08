@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MeuSitioExercicio_P2</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><font color="#800080">Sistema de Cadastramento</font></h1>
+    </header>
+    <nav>
+        <ol>
+            <li>
+                <a href="{{ url_for('setor') }}">Cadastrando Setores</a>
+            </li>
+            <li>
+                <a href="{{ url_for('funcionarios') }}">Cadastrando Funcionário</a>
+            </li>
+            <li>
+                <a href="{{ url_for('cargos') }}">Cadastrando Cargo</a>
+            </li>
+            <li>
+                <a href="{{ url_for('filtros') }}">Filtros</a>
+            </li>
+        </ol>
+    </nav>
+    <div class="content">
+        {% block content %}   {% endblock %}
+    </div>
+    <footer>
+        &#174; {{ current_year }}  SISTEMA DE CADASTRAMENTO
+    </footer>
+</body>
+</html>
+
+
+
+
+
